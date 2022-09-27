@@ -6,9 +6,9 @@
 
 class Disp {
 	private:
-		SDL_Window* win;
+		SDL_Window* _win;
 
-		SDL_GLContext ctx;
+		SDL_GLContext _ctx;
 
 	public:
 		bool open = false;

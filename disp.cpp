@@ -11,9 +11,9 @@ Disp::Disp(const char* title, int wd, int ht) {
 	SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE, 32);
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
-	win = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, wd, ht, SDL_WINDOW_OPENGL);
+	_win = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, wd, ht, SDL_WINDOW_OPENGL);
 
-	ctx = SDL_GL_CreateContext(win);
+	_ctx = SDL_GL_CreateContext(_win);
 
 	GLenum status = glewInit();
 	if (status != GLEW_OK) {
@@ -31,13 +31,13 @@ void Disp::clear(float r, float g, float b, float a) {
 }
 
 void Disp::update() {
-	SDL_GL_SwapWindow(win);
+	SDL_GL_SwapWindow(_win);
 }
 
 Disp::~Disp() {
-	SDL_GL_DeleteContext(ctx);
+	SDL_GL_DeleteContext(_ctx);
 
-	SDL_DestroyWindow(win);
+	SDL_DestroyWindow(_win);
 
 	SDL_Quit();
 }
