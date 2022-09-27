@@ -1,5 +1,8 @@
 #pragma once
 
+#include <string>
+#include <GL/glew.h>
+
 #include "util.h"
 
 class Shad {

@@ -4,7 +4,7 @@ EXEC=pkr
 
 BUILDDIR=build
 
-SRC=main.cpp disp.cpp prog.cpp util.cpp
+SRC=main.cpp disp.cpp prog.cpp card.cpp util.cpp
 OBJ=$(SRC:%.cpp=$(BUILDDIR)/%.o)
 
 LDFLAGS=-lGLEW -lGL -lSDL2
