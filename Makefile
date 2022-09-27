@@ -9,10 +9,10 @@ LDFLAGS=-lGLEW -lGL -lSDL2
 all: pkr
 
 %.o: %.cpp %.h
-	$(CXX) -c $< -o $@ $(LDFLAGS)
+	$(CXX) -c $< -o $@
 
 main.o: main.cpp
-	$(CXX) -c $< -o $@ $(LDFLAGS)
+	$(CXX) -c $< -o $@
 
 pkr: $(OBJ) $(HDR)
 	$(CXX) $(OBJ) $(LDFLAGS) -o $@
