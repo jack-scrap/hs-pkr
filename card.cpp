@@ -2,6 +2,18 @@
 
 extern const unsigned int res[2];
 
+const GLfloat Card::vtc[2 * 2 * 2] = {
+	-1.0, -2.0,
+	1.0, -2.0,
+	-1.0, 2.0,
+	1.0, 2.0
+};
+
+const GLushort Card::idc[2 * 3] = {
+	0, 1, 2,
+	2, 1, 3
+};
+
 Card::Card() :
 	_prog("main", "solid") {
 		/* Data */
@@ -13,22 +25,11 @@ Card::Card() :
 		glGenBuffers(1, &vbo);
 		glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
-		const GLfloat vtc[2 * 2 * 2] = {
-			-1.0, -2.0,
-			1.0, -2.0,
-			-1.0, 2.0,
-			1.0, 2.0
-		};
 		glBufferData(GL_ARRAY_BUFFER, sizeof vtc, vtc, GL_STATIC_DRAW);
 
 		GLuint ibo;
 		glGenBuffers(1, &ibo);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
-
-		const GLushort idc[] = {
-			0, 1, 2,
-			2, 1, 3
-		};
 
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof idc, idc, GL_STATIC_DRAW);
 
