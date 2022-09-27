@@ -33,6 +33,7 @@ Card::Card() :
 
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof _idc, _idc, GL_STATIC_DRAW);
 
+		/* Program */
 		_prog.use();
 
 		// Attribute
