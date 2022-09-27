@@ -3,10 +3,7 @@ CXX=g++
 STATIC=main disp prog util
 OBJ_STATIC=$(patsubst %, %.o, $(STATIC))
 
-GL=-lGLEW -lGL
-SDL=-lSDL2
-LDFLAGS+=$(SDL)
-LDFLAGS+=$(GL)
+LDFLAGS=-lGLEW -lGL -lSDL2
 
 .PHONY: clean
 
