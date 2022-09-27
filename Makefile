@@ -6,7 +6,7 @@ OBJ_STATIC=$(STATIC:%.cpp=%.o)
 LDFLAGS=-lGLEW -lGL -lSDL2
 
 .PHONY: all
-all: make
+all: a.out
 
 %.o: %.cpp %.h
 	$(CXX) -c $< -o $@ $(LDFLAGS)
@@ -14,8 +14,7 @@ all: make
 main.o: main.cpp
 	$(CXX) -c $< -o $@ $(LDFLAGS)
 
-.PHONY: make
-make: $(OBJ_STATIC) $(HDR)
+a.out: $(OBJ_STATIC) $(HDR)
 	$(CXX) $(OBJ_STATIC) $(LDFLAGS)
 
 .PHONY: clean
