@@ -1,7 +1,7 @@
 CXX=g++
 
 STATIC=main.cpp disp.cpp prog.cpp util.cpp
-OBJ_STATIC=$(patsubst %.cpp, %.o, $(STATIC))
+OBJ_STATIC=$(STATIC:%.cpp=%.o)
 
 LDFLAGS=-lGLEW -lGL -lSDL2
 
