@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-
 #include <GL/glew.h>
 
 #include "prog.h"
