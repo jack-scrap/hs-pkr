@@ -10,7 +10,7 @@
 int main() {
 	Disp disp("asdf", 800, 600);
 
-	/* data */
+	/* Data */
 	GLuint vao;
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
