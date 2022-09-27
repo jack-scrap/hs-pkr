@@ -14,7 +14,7 @@ const GLushort Card::_idc[2 * 3] = {
 	2, 1, 3
 };
 
-Card::Card() :
+Card::Card(bool t) :
 	_prog("main", "solid") {
 		/* Data */
 		glGenVertexArrays(1, &_vao);
@@ -42,6 +42,9 @@ Card::Card() :
 		// Uniform
 		GLint uniRes = glGetUniformLocation(_prog._id, "res");
 		glUniform2ui(uniRes, res[0], res[1]);
+
+		GLint uniT = glGetUniformLocation(_prog._id, "t");
+		glUniform1ui(uniT, t);
 
 		_prog.unUse();
 	}

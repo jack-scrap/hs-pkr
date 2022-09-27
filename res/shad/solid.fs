@@ -1,5 +1,7 @@
 #version 400
 
+uniform uint t;
+
 vec3[2] grey = vec3[2](
 	vec3(34, 34, 34),
 	vec3(102, 102, 102)
@@ -11,5 +13,5 @@ vec3[2] purple = vec3[2](
 );
 
 void main() {
-	gl_FragColor = vec4(purple[int(false)] / 255.0, 1.0);
+	gl_FragColor = vec4(purple[int(t)] / 255.0, 1.0);
 }

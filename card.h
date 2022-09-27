@@ -15,7 +15,7 @@ class Card {
 		static const GLushort _idc[2 * 3];
 
 	public:
-		Card();
+		Card(bool t);
 
 		void draw();
 };

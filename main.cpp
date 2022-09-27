@@ -16,7 +16,7 @@ extern const unsigned int res[2] = {
 int main() {
 	Disp disp("Poker", res[0], res[1]);
 	
-	Card card;
+	Card card(false);
 
 	SDL_Event e;
 	while (disp.open) {
