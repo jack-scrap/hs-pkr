@@ -9,7 +9,7 @@
 #include "card.h"
 
 int main() {
-	Disp disp("asdf", 800, 600);
+	Disp disp("Poker", 800, 600);
 	
 	Card card;
 
