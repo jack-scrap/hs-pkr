@@ -42,14 +42,13 @@ Shad::~Shad() {
 }
 
 Prog::Prog(std::string nameVtx, std::string nameFrag) {
-	/* shader */
-	/// vertex
+	// Vertex
 	Shad vtx("res/shad/" + nameVtx, 1);
 
-	/// fragment
+	// Fragment
 	Shad frag("res/shad/" + nameFrag, 0);
 
-	/// program
+	// Program
 	_id = glCreateProgram();
 	glAttachShader(_id, vtx._id);
 	glAttachShader(_id, frag._id);
