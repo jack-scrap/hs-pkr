@@ -7,6 +7,7 @@
 #include "prog.h"
 #include "util.h"
 #include "card.h"
+#include "math.h"
 
 extern const unsigned int res[2] = {
 	800,
@@ -14,7 +15,7 @@ extern const unsigned int res[2] = {
 };
 
 int main() {
-	Disp disp("Poker", res[0], res[1]);
+	Disp disp("Poker", res[X], res[Y]);
 	
 	Card card(false);
 

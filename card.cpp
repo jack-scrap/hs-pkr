@@ -1,4 +1,5 @@
 #include "card.h"
+#include "math.h"
 
 extern const unsigned int res[2];
 
@@ -41,7 +42,7 @@ Card::Card(bool t) :
 
 		// Uniform
 		GLint uniRes = glGetUniformLocation(_prog._id, "res");
-		glUniform2ui(uniRes, res[0], res[1]);
+		glUniform2ui(uniRes, res[X], res[Y]);
 
 		GLint uniT = glGetUniformLocation(_prog._id, "t");
 		glUniform1ui(uniT, t);
