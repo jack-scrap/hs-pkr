@@ -8,8 +8,13 @@
 #include "util.h"
 #include "card.h"
 
+extern const unsigned int res[2] = {
+	800,
+	600
+};
+
 int main() {
-	Disp disp("Poker", 800, 600);
+	Disp disp("Poker", res[0], res[1]);
 	
 	Card card;
 

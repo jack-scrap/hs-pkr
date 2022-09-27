@@ -1,5 +1,7 @@
 #include "card.h"
 
+extern const unsigned int res[2];
+
 Card::Card() :
 	_prog("main", "solid") {
 		/* Data */
@@ -36,6 +38,10 @@ Card::Card() :
 		GLint attrPos = glGetAttribLocation(_prog._id, "pos");
 		glVertexAttribPointer(attrPos, 2, GL_FLOAT, GL_FALSE, 0, (GLvoid*) 0);
 		glEnableVertexAttribArray(attrPos);
+
+		// Uniform
+		GLint uniRes = glGetUniformLocation(_prog._id, "res");
+		glUniform2ui(uniRes, res[0], res[1]);
 
 		_prog.unUse();
 	}
