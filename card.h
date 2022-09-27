@@ -10,9 +10,9 @@ class Card {
 
 		Prog _prog;
 
-		static const GLfloat vtc[2 * 2 * 2];
+		static const GLfloat _vtc[2 * 2 * 2];
 
-		static const GLushort idc[2 * 3];
+		static const GLushort _idc[2 * 3];
 
 	public:
 		Card();
