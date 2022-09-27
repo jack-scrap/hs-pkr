@@ -15,7 +15,7 @@ main.o: main.cpp
 	$(CXX) -c $< -o $@ $(LDFLAGS)
 
 a.out: $(OBJ_STATIC) $(HDR)
-	$(CXX) $(OBJ_STATIC) $(LDFLAGS)
+	$(CXX) $(OBJ_STATIC) $(LDFLAGS) -o $@
 
 .PHONY: clean
 clean:
