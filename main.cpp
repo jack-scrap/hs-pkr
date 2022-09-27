@@ -20,10 +20,11 @@ int main() {
 	glGenBuffers(1, &vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
-	constexpr GLfloat vtc[3 * 2] = {
+	const GLfloat vtc[2 * 2 * 2] = {
 		-1.0, -1.0,
 		1.0, -1.0,
-		0.0, 1.0
+		-1.0, 1.0,
+		1.0, 1.0
 	};
 	glBufferData(GL_ARRAY_BUFFER, sizeof vtc, vtc, GL_STATIC_DRAW);
 
@@ -31,8 +32,9 @@ int main() {
 	glGenBuffers(1, &ibo);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
 
-	constexpr GLushort idc[] = {
-		0, 1, 2
+	const GLushort idc[] = {
+		0, 1, 2,
+		2, 1, 3
 	};
 
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof idc, idc, GL_STATIC_DRAW);
@@ -57,7 +59,7 @@ int main() {
 
 		disp.clear(0, 0, 0, 1);
 
-		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, (GLvoid*) 0);
+		glDrawElements(GL_TRIANGLES, 2 * 3, GL_UNSIGNED_SHORT, (GLvoid*) 0);
 
 		disp.update();
 	}
