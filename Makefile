@@ -18,7 +18,7 @@ $(BUILDDIR)/%.o: %.cpp %.h
 $(BUILDDIR)/main.o: main.cpp
 	$(CXX) -c $< -o $@
 
-$(EXEC): $(OBJ) $(HDR)
+$(EXEC): $(OBJ)
 	$(CXX) $(OBJ) $(LDFLAGS) -o $@
 
 .PHONY: mk_build
