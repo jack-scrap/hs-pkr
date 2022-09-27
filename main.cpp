@@ -48,7 +48,7 @@ int main() {
 
 		disp.clear(0, 0, 0, 1);
 
-		glDrawArrays(GL_TRIANGLES, 0, 3 * 3);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 
 		disp.update();
 	}
