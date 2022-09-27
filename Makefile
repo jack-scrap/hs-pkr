@@ -16,7 +16,7 @@ main.o: main.cpp
 	$(CXX) -c $< -o $@ $(LDFLAGS)
 
 make: $(OBJ_STATIC) $(HDR)
-	$(CXX) $^ $(LDFLAGS)
+	$(CXX) $(OBJ_STATIC) $(LDFLAGS)
 
 clean:
 	rm *.o a.out
