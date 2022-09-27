@@ -44,10 +44,10 @@ Shad::~Shad() {
 Prog::Prog(std::string vtx, std::string frag) {
 	/* shader */
 	/// vertex
-	Shad _vtx(vtx, 1);
+	Shad _vtx("res/shad/" + vtx, 1);
 
 	/// fragment
-	Shad _frag(frag, 0);
+	Shad _frag("res/shad/" + frag, 0);
 
 	/// program
 	_id = glCreateProgram();
