@@ -41,18 +41,18 @@ Shad::~Shad() {
 	glDeleteShader(_id);
 }
 
-Prog::Prog(std::string vtx, std::string frag) {
+Prog::Prog(std::string nameVtx, std::string nameFrag) {
 	/* shader */
 	/// vertex
-	Shad _vtx("res/shad/" + vtx, 1);
+	Shad vtx("res/shad/" + nameVtx, 1);
 
 	/// fragment
-	Shad _frag("res/shad/" + frag, 0);
+	Shad frag("res/shad/" + nameFrag, 0);
 
 	/// program
 	_id = glCreateProgram();
-	glAttachShader(_id, _vtx._id);
-	glAttachShader(_id, _frag._id);
+	glAttachShader(_id, vtx._id);
+	glAttachShader(_id, frag._id);
 	glLinkProgram(_id);
 }
 

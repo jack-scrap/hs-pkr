@@ -15,7 +15,7 @@ class Prog {
 	public:
 		GLuint _id;
 
-		Prog(std::string vtx, std::string frag);
+		Prog(std::string nameVtx, std::string nameFrag);
 
 		void use();
 
