@@ -1,7 +1,7 @@
 CXX=g++
 
-STATIC=main.cpp disp.cpp prog.cpp util.cpp
-OBJ_STATIC=$(STATIC:%.cpp=%.o)
+SRC=main.cpp disp.cpp prog.cpp util.cpp
+OBJ=$(SRC:%.cpp=%.o)
 
 LDFLAGS=-lGLEW -lGL -lSDL2
 
@@ -14,8 +14,8 @@ all: pkr
 main.o: main.cpp
 	$(CXX) -c $< -o $@ $(LDFLAGS)
 
-pkr: $(OBJ_STATIC) $(HDR)
-	$(CXX) $(OBJ_STATIC) $(LDFLAGS) -o $@
+pkr: $(OBJ) $(HDR)
+	$(CXX) $(OBJ) $(LDFLAGS) -o $@
 
 .PHONY: clean
 clean:
