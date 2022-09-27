@@ -5,7 +5,7 @@ OBJ_STATIC=$(patsubst %.cpp, %.o, $(STATIC))
 
 LDFLAGS=-lGLEW -lGL -lSDL2
 
-.PHONY: clean
+.PHONY: all make clean
 
 all: make
 
