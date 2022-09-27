@@ -28,7 +28,7 @@ int main() {
 	glBufferData(GL_ARRAY_BUFFER, sizeof vtc, vtc, GL_STATIC_DRAW);
 
 	// shader
-	Prog prog("shad", "shad");
+	Prog prog("main", "solid");
 
 	/// attribute
 	GLint attrPos = glGetAttribLocation(prog._id, "pos");
