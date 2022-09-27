@@ -1,5 +1,7 @@
 CXX=g++
 
+EXEC=pkr
+
 BUILDDIR=build
 
 SRC=main.cpp disp.cpp prog.cpp util.cpp
@@ -8,7 +10,7 @@ OBJ=$(SRC:%.cpp=$(BUILDDIR)/%.o)
 LDFLAGS=-lGLEW -lGL -lSDL2
 
 .PHONY: all
-all: mk_build pkr
+all: mk_build $(EXEC)
 
 $(BUILDDIR)/%.o: %.cpp %.h
 	$(CXX) -c $< -o $@
@@ -16,7 +18,7 @@ $(BUILDDIR)/%.o: %.cpp %.h
 $(BUILDDIR)/main.o: main.cpp
 	$(CXX) -c $< -o $@
 
-pkr: $(OBJ) $(HDR)
+$(EXEC): $(OBJ) $(HDR)
 	$(CXX) $(OBJ) $(LDFLAGS) -o $@
 
 .PHONY: mk_build
@@ -25,4 +27,4 @@ mk_build:
 
 .PHONY: clean
 clean:
-	rm $(BUILDDIR)/*.o pkr
+	rm $(BUILDDIR)/*.o $(EXEC)
