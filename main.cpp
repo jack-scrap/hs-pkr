@@ -20,7 +20,7 @@ int main() {
 	glGenBuffers(1, &vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
-	GLfloat vtc[3 * 2] = {
+	constexpr GLfloat vtc[3 * 2] = {
 		-1.0, -1.0,
 		1.0, -1.0,
 		0.0, 1.0
@@ -31,7 +31,7 @@ int main() {
 	glGenBuffers(1, &ibo);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
 
-	GLushort idc[] = {
+	constexpr GLushort idc[] = {
 		0, 1, 2
 	};
 
