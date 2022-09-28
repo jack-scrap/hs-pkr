@@ -22,6 +22,16 @@ class Card {
 			DIAM
 		};
 
+		enum {
+			POS
+		};
+
+		enum {
+			LOC,
+			T,
+			RES
+		};
+
 	public:
 		Card(bool t, glm::vec2 loc = glm::vec2(0.0));
 

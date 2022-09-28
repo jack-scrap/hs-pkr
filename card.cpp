@@ -25,19 +25,23 @@ Card::Card(bool t, glm::vec2 loc) :
 		_prog.use();
 
 		// Attribute
-		GLint attrPos = glGetAttribLocation(_prog._id, "pos");
-		glVertexAttribPointer(attrPos, 2, GL_FLOAT, GL_FALSE, 0, (GLvoid*) 0);
-		glEnableVertexAttribArray(attrPos);
+		GLint attr[1];
+
+		attr[POS] = glGetAttribLocation(_prog._id, "pos");
+		glVertexAttribPointer(attr[POS], 2, GL_FLOAT, GL_FALSE, 0, (GLvoid*) 0);
+		glEnableVertexAttribArray(attr[POS]);
 
 		// Uniform
-		GLint uniLoc = glGetUniformLocation(_prog._id, "loc");
-		glUniform2fv(uniLoc, 1, glm::value_ptr(loc));
+		GLint uni[3];
 
-		GLint uniT = glGetUniformLocation(_prog._id, "t");
-		glUniform1ui(uniT, t);
+		uni[LOC] = glGetUniformLocation(_prog._id, "loc");
+		glUniform2fv(uni[LOC], 1, glm::value_ptr(loc));
 
-		GLint uniRes = glGetUniformLocation(_prog._id, "res");
-		glUniform2ui(uniRes, res[X], res[Y]);
+		uni[T] = glGetUniformLocation(_prog._id, "t");
+		glUniform1ui(uni[T], t);
+
+		uni[RES] = glGetUniformLocation(_prog._id, "res");
+		glUniform2ui(uni[RES], res[X], res[Y]);
 
 		_prog.unUse();
 	}
