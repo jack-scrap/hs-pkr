@@ -19,7 +19,7 @@ const GLushort Card::_idc[2 * 3] = {
 };
 
 Card::Card(bool t, glm::vec2 loc) :
-	_prog("main", "solid") {
+	_prog("main", "check") {
 		/* Data */
 		glGenVertexArrays(1, &_vao);
 		glBindVertexArray(_vao);
