@@ -17,7 +17,7 @@ extern const unsigned int res[2] = {
 int main() {
 	Disp disp("Poker", res[X], res[Y]);
 	
-	Card card(false);
+	Card card(false, glm::vec2(0.0, 5.0));
 
 	SDL_Event e;
 	while (disp.open) {
