@@ -11,7 +11,10 @@ class Obj {
 
 		Prog _prog;
 
-		Obj(GLfloat* vtc, GLushort* idc, unsigned int noEl, std::string nameVtx, std::string nameFrag);
+		Obj** _child;
+		unsigned int _noChild;
+
+		Obj(GLfloat* vtc, GLushort* idc, unsigned int noEl, std::string nameVtx, std::string nameFrag, Obj* child = nullptr, unsigned int noChild = 0);
 
 		void draw();
 

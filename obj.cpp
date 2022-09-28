@@ -1,8 +1,11 @@
+#include <memory.h>
+
 #include "obj.h"
 
-Obj::Obj(GLfloat* vtc, GLushort* idc, unsigned int noEl, std::string nameVtx, std::string nameFrag) :
+Obj::Obj(GLfloat* vtc, GLushort* idc, unsigned int noEl, std::string nameVtx, std::string nameFrag, Obj* child, unsigned int noChild) :
 	_mesh(vtc, idc, noEl),
-	_prog(nameVtx, nameFrag) {
+	_prog(nameVtx, nameFrag),
+	_noChild(noChild) {
 		/* Program */
 		_prog.use();
 
@@ -14,6 +17,9 @@ Obj::Obj(GLfloat* vtc, GLushort* idc, unsigned int noEl, std::string nameVtx, st
 		glEnableVertexAttribArray(attr[POS]);
 
 		_prog.unUse();
+
+		/* Children */
+		_child = (Obj**) malloc(_noChild * sizeof (Obj*));
 	}
 
 void Obj::draw() {
@@ -24,4 +30,8 @@ void Obj::draw() {
 
 	_prog.unUse();
 	glBindVertexArray(0);
+
+	for (int i = 0; i < _noChild; i++) {
+		_child[i]->draw();
+	}
 }
