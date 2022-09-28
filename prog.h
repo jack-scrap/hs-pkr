@@ -25,4 +25,9 @@ class Prog {
 		void unUse();
 
 		~Prog();
+
+		enum {
+			VTX,
+			SHAD
+		};
 };

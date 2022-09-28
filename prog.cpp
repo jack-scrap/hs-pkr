@@ -10,13 +10,13 @@ Shad::Shad(std::string name, int stage) {
 	GLenum type;
 
 	switch (stage) {
-		case 0:
+		case Prog::VTX:
 			ext = "vs";
 			type = GL_VERTEX_SHADER;
 
 			break;
 
-		case 1:
+		case Prog::SHAD:
 			ext = "fs";
 			type = GL_FRAGMENT_SHADER;
 
@@ -49,10 +49,10 @@ Shad::~Shad() {
 
 Prog::Prog(std::string nameVtx, std::string nameFrag) {
 	// Vertex
-	Shad vtx("res/shad/" + nameVtx, 0);
+	Shad vtx("res/shad/" + nameVtx, VTX);
 
 	// Fragment
-	Shad frag("res/shad/" + nameFrag, 1);
+	Shad frag("res/shad/" + nameFrag, SHAD);
 
 	// Program
 	_id = glCreateProgram();
