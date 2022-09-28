@@ -18,9 +18,11 @@ extern const unsigned int res[2] = {
 int main() {
 	Disp disp("Poker", res[X], res[Y]);
 	
-	std::vector<Card*> hand;
-	for (int i = 0; i < 5; i++) {
-		hand.push_back(new Card(false, glm::vec2(i * 2.0, 5.0)));
+	std::vector<Card*> hand[2];
+	for (int t = 0; t < 2; t++) {
+		for (int i = 0; i < 5; i++) {
+			hand[t].push_back(new Card(t, glm::vec2(i * 2.0, (t ? 1 : -1) * 5.0)));
+		}
 	}
 
 	SDL_Event e;
@@ -33,8 +35,10 @@ int main() {
 
 		disp.clear(0, 0, 0, 1);
 
-		for (Card* card : hand) {
-			card->draw();
+		for (int t = 0; t < 2; t++) {
+			for (Card* card : hand[t]) {
+				card->draw();
+			}
 		}
 
 		disp.update();
