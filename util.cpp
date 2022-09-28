@@ -5,7 +5,7 @@
 
 std::string util::rd(std::string fName) {
 	std::ifstream in;
-	in.open("./" + fName);
+	in.open(fName);
 
 	std::string buff;
 	for (std::string l; std::getline(in, l);) {
