@@ -7,6 +7,7 @@
 #include "disp.h"
 #include "prog.h"
 #include "util.h"
+#include "mesh.h"
 #include "card.h"
 #include "math.h"
 

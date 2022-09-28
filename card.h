@@ -2,11 +2,12 @@
 
 #include <GL/glew.h>
 
+#include "mesh.h"
 #include "prog.h"
 
 class Card {
 	private:
-		GLuint _vao;
+		Mesh _mesh;
 
 		Prog _prog;
 
