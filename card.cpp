@@ -19,17 +19,9 @@ const GLushort Card::_idc[2 * 3] = {
 };
 
 Card::Card(bool t, glm::vec2 loc) :
-	_mesh((GLfloat*) _vtc, (GLushort*) _idc, 2 * 3),
-	_prog("main", "solid") {
+	Obj((GLfloat*) _vtc, (GLushort*) _idc, sizeof _idc / sizeof *_idc, "main", "solid") {
 		/* Program */
 		_prog.use();
-
-		// Attribute
-		GLint attr[1];
-
-		attr[POS] = glGetAttribLocation(_prog._id, "pos");
-		glVertexAttribPointer(attr[POS], 2, GL_FLOAT, GL_FALSE, 0, (GLvoid*) 0);
-		glEnableVertexAttribArray(attr[POS]);
 
 		// Uniform
 		GLint uni[3];
@@ -45,13 +37,3 @@ Card::Card(bool t, glm::vec2 loc) :
 
 		_prog.unUse();
 	}
-
-void Card::draw() {
-	glBindVertexArray(_mesh._vao);
-	_prog.use();
-
-	glDrawElements(GL_TRIANGLES, 2 * 3, GL_UNSIGNED_SHORT, (GLvoid*) 0);
-
-	_prog.unUse();
-	glBindVertexArray(0);
-}

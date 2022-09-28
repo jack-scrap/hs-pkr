@@ -9,6 +9,7 @@
 #include "util.h"
 #include "mesh.h"
 #include "card.h"
+#include "obj.h"
 #include "math.h"
 
 extern const unsigned int res[2] = {

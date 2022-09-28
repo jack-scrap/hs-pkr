@@ -2,15 +2,11 @@
 
 #include <GL/glew.h>
 
-#include "mesh.h"
+#include "obj.h"
 #include "prog.h"
 
-class Card {
+class Card : public Obj {
 	private:
-		Mesh _mesh;
-
-		Prog _prog;
-
 		static const GLfloat _vtc[2 * 2 * 2];
 
 		static const GLushort _idc[2 * 3];
@@ -23,10 +19,6 @@ class Card {
 		};
 
 		enum {
-			POS
-		};
-
-		enum {
 			LOC,
 			T,
 			RES
@@ -34,6 +26,4 @@ class Card {
 
 	public:
 		Card(bool t, glm::vec2 loc = glm::vec2(0.0));
-
-		void draw();
 };
