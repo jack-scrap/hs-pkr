@@ -33,11 +33,11 @@ Card::Card(bool t, glm::vec2 loc) :
 		GLint uniLoc = glGetUniformLocation(_prog._id, "loc");
 		glUniform2fv(uniLoc, 1, glm::value_ptr(loc));
 
-		GLint uniRes = glGetUniformLocation(_prog._id, "res");
-		glUniform2ui(uniRes, res[X], res[Y]);
-
 		GLint uniT = glGetUniformLocation(_prog._id, "t");
 		glUniform1ui(uniT, t);
+
+		GLint uniRes = glGetUniformLocation(_prog._id, "res");
+		glUniform2ui(uniRes, res[X], res[Y]);
 
 		_prog.unUse();
 	}
