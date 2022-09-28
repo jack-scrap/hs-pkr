@@ -1,3 +1,6 @@
+#include <glm/glm.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #include "card.h"
 #include "math.h"
 
@@ -15,7 +18,7 @@ const GLushort Card::_idc[2 * 3] = {
 	2, 1, 3
 };
 
-Card::Card(bool t) :
+Card::Card(bool t, glm::vec2 loc) :
 	_prog("main", "solid") {
 		/* Data */
 		glGenVertexArrays(1, &_vao);
@@ -42,6 +45,9 @@ Card::Card(bool t) :
 		glEnableVertexAttribArray(attrPos);
 
 		// Uniform
+		GLint uniLoc = glGetUniformLocation(_prog._id, "loc");
+		glUniform2fv(uniLoc, 1, glm::value_ptr(loc));
+
 		GLint uniRes = glGetUniformLocation(_prog._id, "res");
 		glUniform2ui(uniRes, res[X], res[Y]);
 

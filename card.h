@@ -15,7 +15,7 @@ class Card {
 		static const GLushort _idc[2 * 3];
 
 	public:
-		Card(bool t);
+		Card(bool t, glm::vec2 loc = glm::vec2(0.0));
 
 		void draw();
 };
