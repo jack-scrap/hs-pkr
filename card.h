@@ -14,6 +14,13 @@ class Card {
 
 		static const GLushort _idc[2 * 3];
 
+		enum {
+			SPACE,
+			CLUB,
+			HEART,
+			DIAM
+		};
+
 	public:
 		Card(bool t, glm::vec2 loc = glm::vec2(0.0));
 
