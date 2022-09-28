@@ -17,5 +17,10 @@ vec3[2] purple = vec3[2](
 const float stride = 1.0;
 
 void main() {
-	gl_FragColor = vec4(purple[int(mod(_pos.x, stride * 2) > stride ^^ mod(_pos.y, stride * 2) > stride)] / 255.0, 1.0);
+	vec3[2] col = grey;
+	if (bool(t)) {
+		col = purple;
+	}
+
+	gl_FragColor = vec4(col[int(mod(_pos.x, stride * 2) > stride ^^ mod(_pos.y, stride * 2) > stride)] / 255.0, 1.0);
 }

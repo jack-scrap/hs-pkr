@@ -13,5 +13,10 @@ vec3[2] purple = vec3[2](
 );
 
 void main() {
-	gl_FragColor = vec4(purple[int(t)] / 255.0, 1.0);
+	vec3[2] col = grey;
+	if (bool(t)) {
+		col = purple;
+	}
+
+	gl_FragColor = vec4(col[int(false)] / 255.0, 1.0);
 }
