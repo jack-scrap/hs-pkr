@@ -36,7 +36,7 @@ Card::Card(unsigned int no, unsigned int suit, bool t, glm::vec2 loc) :
 		_noChild++;
 		_child = (Obj**) realloc(_child, _noChild * sizeof (Obj*));
 
-		Obj* suitObj = new Obj((GLfloat*) _diamVtc, (GLushort*) _diamIdc, 2 * 3, glm::vec2(0.0), "main", "solid");
+		Obj* suitObj = new Obj((GLfloat*) _diamVtc, (GLushort*) _diamIdc, sizeof _diamIdc / sizeof *_diamIdc, glm::vec2(0.0), "main", "solid");
 
 		suitObj->_prog.use();
 
