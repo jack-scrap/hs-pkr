@@ -16,17 +16,17 @@ class Card : public Obj {
 		static const GLushort _diamIdc[];
 
 		enum {
-			SPACE,
-			CLUB,
-			HEART,
-			DIAM
-		};
-
-		enum {
 			T,
 			RES
 		};
 
 	public:
-		Card(bool t, glm::vec2 loc = glm::vec2(0.0));
+		Card(unsigned int suit, bool t, glm::vec2 loc);
+
+		enum {
+			SPACE,
+			CLUB,
+			HEART,
+			DIAM
+		};
 };

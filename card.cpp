@@ -30,27 +30,27 @@ const GLushort Card::_diamIdc[] = {
 	2, 3, 1
 };
 
-Card::Card(bool t, glm::vec2 loc) :
+Card::Card(unsigned int suit, bool t, glm::vec2 loc) :
 	Obj((GLfloat*) _vtc, (GLushort*) _idc, sizeof _idc / sizeof *_idc, loc, "main", "solid") {
 		_noChild++;
 		_child = (Obj**) realloc(_child, _noChild * sizeof (Obj*));
 
-		Obj* suit = new Obj((GLfloat*) _diamVtc, (GLushort*) _diamIdc, 2 * 3, glm::vec2(0.0), "main", "solid");
+		Obj* suitObj = new Obj((GLfloat*) _diamVtc, (GLushort*) _diamIdc, 2 * 3, glm::vec2(0.0), "main", "solid");
 
-		suit->_prog.use();
+		suitObj->_prog.use();
 
-		GLint uniLocSuit = glGetUniformLocation(suit->_prog._id, "loc");
+		GLint uniLocSuit = glGetUniformLocation(suitObj->_prog._id, "loc");
 		glUniform2fv(uniLocSuit, 1, glm::value_ptr(glm::vec2(0.0)));
 
-		GLint uniTSuit = glGetUniformLocation(suit->_prog._id, "t");
+		GLint uniTSuit = glGetUniformLocation(suitObj->_prog._id, "t");
 		glUniform1ui(uniTSuit, true);
 
-		GLint uniResSuit = glGetUniformLocation(suit->_prog._id, "res");
+		GLint uniResSuit = glGetUniformLocation(suitObj->_prog._id, "res");
 		glUniform2ui(uniResSuit, res[X], res[Y]);
 
-		suit->_prog.unUse();
+		suitObj->_prog.unUse();
 
-		_child[0] = suit;
+		_child[0] = suitObj;
 
 		/* Program */
 		_prog.use();
