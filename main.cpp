@@ -23,7 +23,7 @@ int main() {
 	std::vector<Card*> hand[2];
 	for (int t = 0; t < 2; t++) {
 		for (int i = 0; i < 5; i++) {
-			hand[t].push_back(new Card(Card::DIAM, t, glm::vec2(i * 2.0, (t ? 1 : -1) * 5.0)));
+			hand[t].push_back(new Card(3, Card::DIAM, t, glm::vec2(i * 2.0, (t ? 1 : -1) * 5.0)));
 		}
 	}
 

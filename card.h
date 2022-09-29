@@ -21,7 +21,7 @@ class Card : public Obj {
 		};
 
 	public:
-		Card(unsigned int suit, bool t, glm::vec2 loc);
+		Card(unsigned int no, unsigned int suit, bool t, glm::vec2 loc);
 
 		enum {
 			SPACE,
