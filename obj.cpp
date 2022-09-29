@@ -34,6 +34,7 @@ Obj::Obj(GLfloat* vtc, GLushort* idc, unsigned int noEl, glm::vec2 loc, std::str
 		/* Children */
 		_child = (Obj**) malloc(_noChild * sizeof (Obj*));
 
+		// Rig
 		acc(glm::mat4(1.0));
 	}
 
