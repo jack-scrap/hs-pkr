@@ -39,9 +39,6 @@ Card::Card(unsigned int suit, bool t, glm::vec2 loc) :
 
 		suitObj->_prog.use();
 
-		GLint uniLocSuit = glGetUniformLocation(suitObj->_prog._id, "loc");
-		glUniform2fv(uniLocSuit, 1, glm::value_ptr(glm::vec2(0.0)));
-
 		GLint uniTSuit = glGetUniformLocation(suitObj->_prog._id, "t");
 		glUniform1ui(uniTSuit, true);
 
