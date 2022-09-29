@@ -18,3 +18,20 @@ std::string util::rd(std::string fName) {
 }
 
 const std::string util::path::curr = ".";
+
+const std::string util::path::sep = "/";
+
+std::string util::path::build(std::vector<std::string> entry) {
+	std::string serial;
+	for (int i = 0; i < entry.size(); i++) {
+		std::string val = entry[i];
+
+		if (i < entry.size() - 1) {
+			val += sep;
+		}
+
+		serial += val;
+	}
+
+	return serial;
+}
