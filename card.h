@@ -24,6 +24,13 @@ class Card : public Obj {
 		Card(unsigned int no, unsigned int suit, bool t, glm::vec2 loc);
 
 		enum {
+			ACE,
+			JACK = 11,
+			QUEEN,
+			KING
+		};
+
+		enum {
 			SPACE,
 			CLUB,
 			HEART,
