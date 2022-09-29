@@ -32,6 +32,7 @@ const GLushort Card::_diamIdc[] = {
 
 Card::Card(unsigned int no, unsigned int suit, bool t, glm::vec2 loc) :
 	Obj((GLfloat*) _vtc, (GLushort*) _idc, sizeof _idc / sizeof *_idc, loc, "main", "solid") {
+		/* Suit */
 		_noChild++;
 		_child = (Obj**) realloc(_child, _noChild * sizeof (Obj*));
 
