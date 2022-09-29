@@ -4,6 +4,10 @@ EXEC=pkr
 
 BUILDDIR=build
 
+PREFIX=/usr/local
+
+BINDIR=$(PREFIX)/bin
+
 SRC=main.cpp disp.cpp prog.cpp mesh.cpp obj.cpp card.cpp util.cpp
 OBJ=$(SRC:%.cpp=$(BUILDDIR)/%.o)
 
@@ -26,6 +30,14 @@ $(EXEC): $(OBJ) $(HDR)
 .PHONY: mk_build
 mk_build:
 	mkdir -p $(BUILDDIR)
+
+.PHONY: install
+install:
+	cp $(EXEC) $(BINDIR)
+
+.PHONY: uninstall
+uninstall:
+	rm $(BINDIR)/$(EXEC)
 
 .PHONY: clean
 clean:
