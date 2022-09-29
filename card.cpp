@@ -18,6 +18,21 @@ const GLushort Card::_idc[2 * 3] = {
 	2, 1, 3
 };
 
+const GLfloat Card::_spadeVtc[] = {
+	-2.0, 0.0,
+	2.0, 0.0,
+	0.0, 2.0,
+
+	-1.0, -1.0,
+	1.0, -1.0,
+	0.0, 0.0
+};
+
+const GLushort Card::_spadeIdc[] = {
+	0, 1, 2,
+	3, 4, 5
+};
+
 const GLfloat Card::_diamVtc[] = {
 	-1.0, 0.0,
 	1.0, 0.0,

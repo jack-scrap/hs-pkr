@@ -11,6 +11,10 @@ class Card : public Obj {
 
 		static const GLushort _idc[2 * 3];
 
+		static const GLfloat _spadeVtc[];
+
+		static const GLushort _spadeIdc[];
+
 		static const GLfloat _diamVtc[];
 
 		static const GLushort _diamIdc[];
