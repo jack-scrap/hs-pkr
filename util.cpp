@@ -16,3 +16,5 @@ std::string util::rd(std::string fName) {
 
 	return buff;
 }
+
+const std::string util::path::curr = ".";
