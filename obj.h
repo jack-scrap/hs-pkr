@@ -13,11 +13,14 @@ class Obj {
 		Prog _prog;
 
 		glm::mat4 _model;
+		glm::mat4 _acc;
 
 		Obj** _child;
 		unsigned int _noChild;
 
 		Obj(GLfloat* vtc, GLushort* idc, unsigned int noEl, glm::vec2 loc, std::string nameVtx, std::string nameFrag, Obj* child = nullptr, unsigned int noChild = 0);
+
+		void acc(glm::mat4 prev);
 
 		void draw();
 
@@ -26,6 +29,6 @@ class Obj {
 		};
 
 		enum {
-			MODEL
+			ACC
 		};
 };

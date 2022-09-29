@@ -49,6 +49,8 @@ Card::Card(unsigned int no, unsigned int suit, bool t, glm::vec2 loc) :
 
 		_child[0] = suitObj;
 
+		acc(glm::mat4(1.0));
+
 		/* Program */
 		_prog.use();
 
