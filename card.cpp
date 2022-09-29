@@ -31,11 +31,11 @@ const GLushort Card::_diamIdc[] = {
 };
 
 Card::Card(bool t, glm::vec2 loc) :
-	Obj((GLfloat*) _vtc, (GLushort*) _idc, sizeof _idc / sizeof *_idc, "main", "solid") {
+	Obj((GLfloat*) _vtc, (GLushort*) _idc, sizeof _idc / sizeof *_idc, loc, "main", "solid") {
 		_noChild++;
 		_child = (Obj**) realloc(_child, _noChild * sizeof (Obj*));
 
-		Obj* suit = new Obj((GLfloat*) _diamVtc, (GLushort*) _diamIdc, 2 * 3, "main", "solid");
+		Obj* suit = new Obj((GLfloat*) _diamVtc, (GLushort*) _diamIdc, 2 * 3, glm::vec2(0.0), "main", "solid");
 
 		suit->_prog.use();
 
@@ -56,10 +56,7 @@ Card::Card(bool t, glm::vec2 loc) :
 		_prog.use();
 
 		// Uniform
-		GLint uni[3];
-
-		uni[LOC] = glGetUniformLocation(_prog._id, "loc");
-		glUniform2fv(uni[LOC], 1, glm::value_ptr(loc));
+		GLint uni[2];
 
 		uni[T] = glGetUniformLocation(_prog._id, "t");
 		glUniform1ui(uni[T], t);

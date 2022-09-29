@@ -23,7 +23,6 @@ class Card : public Obj {
 		};
 
 		enum {
-			LOC,
 			T,
 			RES
 		};
