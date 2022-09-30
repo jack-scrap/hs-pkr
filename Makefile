@@ -33,11 +33,14 @@ mk_build:
 
 .PHONY: install
 install:
-	cp $(EXEC) $(BINDIR)
+	cp $(EXEC) $(BINDIR) ;
+	mkdir -p $(PREFIX)/share/pkr ;
+	cp -r res $(PREFIX)/share/pkr
 
 .PHONY: uninstall
 uninstall:
-	rm $(BINDIR)/$(EXEC)
+	rm $(BINDIR)/$(EXEC) ;
+	rm -rf $(PREFIX)/share/pkr
 
 .PHONY: clean
 clean:
