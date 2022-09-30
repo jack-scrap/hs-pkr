@@ -6,6 +6,9 @@ BUILDDIR=build
 
 PREFIX=/usr/local
 
+DATAROOTDIR=$(PREFIX)/share
+DATADIR=$(DATAROOTDIR)/pkr
+
 BINDIR=$(PREFIX)/bin
 
 SRC=main.cpp disp.cpp prog.cpp mesh.cpp obj.cpp card.cpp util.cpp
@@ -34,13 +37,13 @@ mk_build:
 .PHONY: install
 install:
 	cp $(EXEC) $(BINDIR) ;
-	mkdir -p $(PREFIX)/share/pkr ;
-	cp -r res $(PREFIX)/share/pkr
+	mkdir -p $(DATADIR) ;
+	cp -r res $(DATADIR)
 
 .PHONY: uninstall
 uninstall:
 	rm $(BINDIR)/$(EXEC) ;
-	rm -rf $(PREFIX)/share/pkr
+	rm -rf $(DATADIR)
 
 .PHONY: clean
 clean:
