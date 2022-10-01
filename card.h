@@ -7,6 +7,8 @@
 
 class Card : public Obj {
 	private:
+		static const GLfloat _dim[2];
+
 		static const GLfloat _vtc[2 * 2 * 2];
 		static const GLushort _idc[2 * 3];
 

@@ -6,11 +6,16 @@
 
 extern const unsigned int res[2];
 
+const GLfloat Card::_dim[2] = {
+	2.5,
+	3.5
+};
+
 const GLfloat Card::_vtc[2 * 2 * 2] = {
-	-1.0, -2.0,
-	1.0, -2.0,
-	-1.0, 2.0,
-	1.0, 2.0
+	-Card::_dim[X] / 2, -Card::_dim[Y] / 2,
+	Card::_dim[X] / 2, -Card::_dim[Y] / 2,
+	-Card::_dim[X] / 2, Card::_dim[Y] / 2,
+	Card::_dim[X] / 2, Card::_dim[Y] / 2
 };
 
 const GLushort Card::_idc[2 * 3] = {
