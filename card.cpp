@@ -79,12 +79,12 @@ const GLushort Card::_diamIdc[] = {
 };
 
 Card::Card(unsigned int no, unsigned int suit, bool t, glm::vec2 loc) :
-	Obj((GLfloat*) _vtc, (GLushort*) _idc, sizeof _idc / sizeof *_idc, loc, "main", "solid") {
+	Obj((GLfloat*) _vtc, (GLushort*) _idc, sizeof _idc / sizeof *_idc, "main", "solid", loc) {
 		/* Suit */
 		_noChild++;
 		_child = (Obj**) realloc(_child, _noChild * sizeof (Obj*));
 
-		Obj* suitObj = new Obj((GLfloat*) _diamVtc, (GLushort*) _diamIdc, sizeof _diamIdc / sizeof *_diamIdc, glm::vec2(0.0), "main", "solid");
+		Obj* suitObj = new Obj((GLfloat*) _diamVtc, (GLushort*) _diamIdc, sizeof _diamIdc / sizeof *_diamIdc, "main", "solid", glm::vec2(0.0));
 
 		suitObj->_prog.use();
 

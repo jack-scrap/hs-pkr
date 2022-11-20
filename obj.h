@@ -18,7 +18,7 @@ class Obj {
 		Obj** _child;
 		unsigned int _noChild;
 
-		Obj(GLfloat* vtc, GLushort* idc, unsigned int noEl, glm::vec2 loc, std::string nameVtx, std::string nameFrag, Obj* child = nullptr, unsigned int noChild = 0);
+		Obj(GLfloat* vtc, GLushort* idc, unsigned int noEl, std::string nameVtx, std::string nameFrag, glm::vec2 loc = glm::vec2(0.0), Obj* child = nullptr, unsigned int noChild = 0);
 
 		void acc(glm::mat4 prev);
 

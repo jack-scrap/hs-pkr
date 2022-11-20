@@ -4,7 +4,7 @@
 
 #include "obj.h"
 
-Obj::Obj(GLfloat* vtc, GLushort* idc, unsigned int noEl, glm::vec2 loc, std::string nameVtx, std::string nameFrag, Obj* child, unsigned int noChild) :
+Obj::Obj(GLfloat* vtc, GLushort* idc, unsigned int noEl, std::string nameVtx, std::string nameFrag, glm::vec2 loc, Obj* child, unsigned int noChild) :
 	_mesh(vtc, idc, noEl),
 	_prog(nameVtx, nameFrag),
 	_model(glm::mat4(1.0)),
