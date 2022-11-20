@@ -37,7 +37,7 @@ class Card : public Obj {
 		};
 
 		enum {
-			SPACE,
+			SPADE,
 			CLUB,
 			HEART,
 			DIAM
